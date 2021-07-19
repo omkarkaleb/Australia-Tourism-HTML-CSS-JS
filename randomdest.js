@@ -272,6 +272,8 @@ function showRandom() {
     name.innerText = tempArray[randomID].name;
     desc.innerText = tempArray[randomID].desc;
 
+    img.style.width = '300px';
+    img.style.height = '200px';
     img.style.objectFit = 'cover';
 
     // document.getElementById('popup').style.display = "block";
