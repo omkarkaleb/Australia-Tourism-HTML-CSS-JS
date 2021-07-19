@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="/randomdest.js"></script>
+
+    <title>Australia Tourism</title>
+    <style>
+        .random__image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__text-box">
+            <h1 class="header-primary">
+                <span class="header-primary--main">Australia Tourism</span>
+                <span class="header-primary--sub">Come Visit</span>
+            </h1>
+
+            <a href="#section1" class="btn btn--white btn--animated">Discover More</a><br><br>
+        </div>
+    </header>
+
+    <main>
+
+
+
+        <section class="selector-section">
+            <div class="u-center-text">
+                <h1 class="heading-secondary">
+                    Randomly Select a Destination Based on Continent
+                </h1>
+            </div>
+
+            <div class="continents__container">
+
+                <div id="container__asia" class="continents__item">
+                    <a href="javascript:void(0);" id="asia" onfocus="select(id)" onblur="deselect(id)">
+                        <div>
+                            <img class="continents__image" src="./img/aasia.jpg" alt="">
+                            <h2 class="continents__name">Asia</h2>
+                        </div>
+                    </a>
+                </div>
+                <div id="container__nam" class="continents__item">
+                    <a href="javascript:void(0);" id="nam" onclick="select(id)" onblur="deselect(id)">
+                        <div>
+                            <img class="continents__image" src="./img/anamerica.jpg" alt="">
+                            <h2 class="continents__name">North America</h2>
+                        </div>
+                    </a>
+                </div>
+                <div id="container__sam" class="continents__item">
+                    <a href="javascript:void(0);" id="sam" onclick="select(id)" onblur="deselect(id)">
+                        <div>
+                            <img class="continents__image" src="./img/asamerica.jpg" alt="">
+                            <h2 class="continents__name">South America</h2>
+                        </div>
+                    </a>
+                </div>
+                <div id="container__aus" class="continents__item">
+                    <a href="javascript:void(0);" id="aus" onclick="select(id)" onblur="deselect(id)">
+                        <div>
+                            <img class="continents__image" src="./img/aaustralia.jpg" alt="">
+                            <h2 class="continents__name">Australia</h2>
+                        </div>
+                    </a>
+                </div>
+                <div id="container__euro" class="continents__item">
+                    <a href="javascript:void(0);" id="euro" onclick="select(id)" onblur="deselect(id)">
+                        <div>
+                            <img class="continents__image" src="./img/aeurope.jpg" alt="">
+                            <h2 class="continents__name">Europe</h2>
+                        </div>
+                    </a>
+                </div>
+                <div id="container__africa" class="continents__item">
+                    <a href="javascript:void(0);" id="africa" onclick="select(id)" onblur="deselect(id)">
+                        <div>
+                            <img class="continents__image" src="./img/aafrica.jpg" alt="">
+                            <h2 class="continents__name">Africa</h2>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <br><br><br><br>
+            <div class="generate">
+                <a onclick="showRandom()" href="#popup" class="btn1 btn--animated">GENERATE a
+                    RANDOM DESTINATION</a>
+            </div>
+
+
+            <!-- <div id="popup" class="popup">
+                <div class="random__box">
+                    <div class="col-r1">
+                        <img class="random__image" id="rimg" src="" alt="">
+                    </div>
+                    <div class="col-r2">
+                        <h2 class="random__name" id="rname"></h2>
+                        <p class="random__desc" id="rdesc"></p>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+        <section id="popup" class="popup">
+            <div class="random__box">
+                <div class="col-r1">
+                    <img class="random__image" id="rimg" src="" alt="">
+                </div>
+                <div class="col-r2">
+                    <h2 class="random__name" id="rname"></h2>
+                    <p class="random__desc" id="rdesc"></p>
+                </div>
+                <button onclick="hidePopup()" class="btn btn-white close-button">&#10006;</button>
+            </div>
+        </section>
+        <!-- <div class="popup">
+            <div class="random__box">
+                <div class="col-r1">
+                    <img class="random__image" id="rimg" src="" alt="">
+                </div>
+                <div class="col-r2">
+                    <h2 class="random__name" id="rname"></h2>
+                    <p class="random__desc" id="rdesc"></p>
+                </div>
+            </div>
+        </div> -->
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__logo-box">
+            <a href="index.html">
+                <img src="./img/logoex1.png" alt="" class="footer__logo">
+            </a>
+        </div>
+        <h1 class="header-primary">
+            <a href="about.html">
+                <span class="header-primary--foot">Australia Tourism</span>
+            </a>
+        </h1>
+        <div>
+            <div class="row">
+                <div class="col-a">
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="about.html" class="footer__link">About Us</a></li>
+                        <li class="footer__item"><a href="booking.html" class="footer__link">Contact Us</a></li>
+                        <li class="footer__item"><a href="" class="footer__link">Privacy Policy</a></li>
+                        <li class="footer__item"><a href="" class="footer__link">Terms</a></li>
+                    </ul>
+                </div>
+                <div class="col-a">
+                    <p class="footer_copyright">
+                        <b>Disclaimer:</b> The information on this website is presented in good faith and on the basis
+                        that Tourism
+                        Australia, nor their agents or employees, are liable (whether by reason of error, omission,
+                        negligence, lack of care or otherwise) to any person for any damage or loss whatsoever which has
+                        occurred or may occur in relation to that person taking or not taking (as the case may be)
+                        action in respect of any statement, information or advice given in this website.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

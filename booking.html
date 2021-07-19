@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us / Inquiry</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/
+	jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/
+	popper.js/1.12.9/umd/popper.min.js">
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <script>
+        $(document).ready(function () {
+
+            //NAME VALIDATION
+            $("#fname").on('keyup', function () {
+                var nameval = $("#fname").val();
+                console.log(nameval)
+                if (nameval == '') {
+                    $(this).css("border-bottom", "3px solid red");
+                    $("#fnamel").css("visibility", "hidden");
+                    $('#submitbtn').prop('disabled', true);
+                    $('#submitbtn').css('background-color', 'grey');
+
+                } else {
+                    $("#fnamel").css("visibility", "visible");
+                    $(this).css("border-bottom", "3px solid purple");
+                }
+            })
+
+            $("#fname").focus(function () {
+                var nameval = $("#fname").val();
+                if (nameval == '') {
+                    $(this).css("border-bottom", "3px solid red");
+                    $("#fnamel").css("visibility", "hidden");
+                    $('#submitbtn').prop('disabled', true);
+                    $('#submitbtn').css('background-color', 'grey');
+
+                } else {
+                    $("#fnamel").css("visibility", "visible");
+                    $(this).css("border-bottom", "3px solid purple");
+                }
+            })
+
+            //EMAIL VALIDATION
+
+            $("#email").on('keyup', function () {
+                var emailval = $("#email").val();
+                let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
+                if (emailval == '') {
+                    $(this).css("border-bottom", "3px solid red");
+                    $("#emaill").css("visibility", "hidden");
+                    $('#submitbtn').prop('disabled', true);
+                    $('#submitbtn').css('background-color', 'grey');
+
+                }
+                if (regex.test(emailval)) {
+                    $("#emaill").css("visibility", "visible");
+                    $(this).css("border-bottom", "3px solid purple");
+                    $('#submitbtn').prop('disabled', false);
+                    $('#submitbtn').css('background-color', 'rgb(173, 55, 173)');
+                } else {
+                    $("#emaill").css("visibility", "visible");
+                    $(this).css("border-bottom", "3px solid red");
+                    $('#submitbtn').prop('disabled', true);
+                    $('#submitbtn').css('background-color', 'grey');
+
+                }
+            })
+
+            $("#email").focus(function () {
+                var emailval = $("#email").val();
+                if (emailval == '') {
+                    $(this).css("border-bottom", "3px solid red");
+                    $("#emaill").css("visibility", "hidden");
+                    $('#submitbtn').prop('disabled', true);
+                    $('#submitbtn').css('background-color', 'grey');
+
+                } else {
+                    $("#emaill").css("visibility", "visible");
+                    $(this).css("border-bottom", "3px solid purple");
+                }
+            })
+
+            //OPTION VALIDATE
+            $('#budget').on('click', function () {
+                var budgetval = $('#budget').val();
+                if ((budgetval == 'select') || (budgetval == '')) {
+                    $(this).css("border-bottom", "3px solid red");
+                } else {
+                    $(this).css("border-bottom", "3px solid purple");
+                    $('#submitbtn').prop('disabled', false);
+                    $('#submitbtn').css('background-color', 'rgb(173, 55, 173)');
+                }
+            })
+
+
+        })
+    </script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo-box">
+            <img class="header__logo " src="img/logo2.png" alt="logo">
+        </div>
+
+        <div class="header__text-box">
+            <h1 class="header-primary">
+                <span class="header-primary--main">Australia Tourism</span>
+                <span class="header-primary--sub">Contact Us</span>
+            </h1>
+
+            <a href="#section1" class="btn btn--white btn--animated">Book Now</a><br><br>
+        </div>
+    </header>
+    <main>
+        <section class="booking-section">
+            <div class="row" id="section1">
+                <div class="booking">
+                    <div class="booking__form">
+                        <form action="index.html" class="form">
+                            <h1 class="heading-secondary">
+                                Start Booking
+                            </h1>
+                            <div class="form__group">
+                                <input id="fname" name="name" type="text" placeholder="Full Name" class="form__input">
+                                <label id="fnamel" class="form__label" for="name">Enter Full Name</label>
+                            </div>
+                            <div class="form__group">
+                                <input id="email" name="email" type="text" placeholder="Enter Email"
+                                    class="form__input">
+                                <label id="emaill" class="form__label" for="email">Enter Email</label>
+                            </div>
+                            <div class="form__group">
+                                <select class="form__input" id="budget" name="budget">
+                                    <option value="select">Select Budget Range</option>
+                                    <option value="tier1">20K - 50K</option>
+                                    <option value="tier2">50K - 1.2L</option>
+                                    <option value="tier3">1.2L - 5L</option>
+                                    <option value="tier4">5L - 20L</option>
+                                </select>
+                                <label class="form__label" for="budget">Select a Budget Range</label>
+                            </div>
+
+
+                            <div class="form__group">
+                                <div class="form__radio-group">
+                                    <input type="radio" name="size" id="single" class="form__radio-input" required>
+                                    <label for="single" class="form__radio-label radio-margin">Solo Traveler</label>
+                                    <input type="radio" name="size" id="couple" class="form__radio-input" required>
+                                    <label for="couple" class="form__radio-label radio-margin">Couple</label>
+                                    <input type="radio" name="size" id="group" class="form__radio-input" required>
+                                    <label for="group" class="form__radio-label radio-margin">Group</label>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <button disabled type="submit" id="submitbtn" class="btn btn--purple">Send
+                                    Inquiry</button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
