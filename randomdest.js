@@ -25,13 +25,13 @@ const asia = [
     },
     {
         'id': 5,
-        'name': 'Singapore',
+        'name': 'Malaysia',
         'desc': 'India, officially the Republic of India (Hindi: Bhārat Gaṇarājya),[23] is a country in South Asia. It is the second-most populous country, the seventh-largest country by land area, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west.',
         'image': './img/asia/5.jpg'
     },
     {
         'id': 6,
-        'name': 'Singapore',
+        'name': 'Nepal',
         'desc': 'India, officially the Republic of India (Hindi: Bhārat Gaṇarājya),[23] is a country in South Asia. It is the second-most populous country, the seventh-largest country by land area, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west.',
         'image': './img/asia/6.jpg'
     },
