@@ -272,7 +272,9 @@ function showRandom() {
     name.innerText = tempArray[randomID].name;
     desc.innerText = tempArray[randomID].desc;
 
-    document.getElementById('popup').style.display = "block";
+    img.style.objectFit = 'cover';
+
+    // document.getElementById('popup').style.display = "block";
 }
 
 function deselect(id) {
