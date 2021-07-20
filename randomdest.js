@@ -234,7 +234,7 @@ function select(id) {
 
     containerID = "container__" + id;
     document.getElementById(containerID).style.backgroundColor = "#fd596f";
-    document.getElementById(containerID).style.transform = "scale(1.01)";
+    document.getElementById(containerID).style.transform = "scale(1.04)";
 
     switch (id) {
         case 'asia':
@@ -261,6 +261,10 @@ function select(id) {
 }
 
 function showRandom() {
+
+    setTimeout(() => {
+        console.log("Executed")
+    }, 1500);
 
     let randomID = Math.floor(Math.random() * 6)
 
