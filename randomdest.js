@@ -233,7 +233,7 @@ let tempArray = [];
 function select(id) {
 
     containerID = "container__" + id;
-    document.getElementById(containerID).style.backgroundColor = "#fd596f";
+    document.getElementById(containerID).style.backgroundColor = "rgb(150, 182, 252)";
     document.getElementById(containerID).style.transform = "scale(1.04)";
 
     switch (id) {
@@ -260,11 +260,14 @@ function select(id) {
 
 }
 
-function showRandom() {
+var myVar;
 
-    setTimeout(() => {
-        console.log("Executed")
-    }, 1500);
+function delay() {
+    document.getElementById('loader').style.display = "block";
+    myVar = setTimeout(showRandom, 1500);
+}
+
+function showRandom() {
 
     let randomID = Math.floor(Math.random() * 6)
 
@@ -280,7 +283,14 @@ function showRandom() {
     img.style.height = '200px';
     img.style.objectFit = 'cover';
 
+    document.getElementById("popup").classList.add('popup-target-class');
     // document.getElementById('popup').style.display = "block";
+    document.getElementById('loader').style.display = "none";
+}
+
+function delayFunc() {
+    console.log("Executed");
+    clearTimeout(myVar)
 }
 
 function deselect(id) {
@@ -291,6 +301,8 @@ function deselect(id) {
 
 function hidePopup() {
     window.history.back(0);
+    document.getElementById('loader').style.display = "none";
+    document.getElementById("popup").classList.remove('popup-target-class');
     // document.getElementById('popup').style.opacity = 0;
     // document.getElementById('popup').style.visibility = 'hidden';
 }
